@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Clock, Loader2 } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -17,6 +19,7 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   return (
     <>
@@ -98,9 +101,33 @@ function ContactPage() {
                 </div>
               ) : (
                 <form
-                  onSubmit={(e) => {
+                  onSubmit={async (e) => {
                     e.preventDefault();
-                    setSubmitted(true);
+                    if (submitting) return;
+                    setSubmitting(true);
+                    const fd = new FormData(e.currentTarget);
+                    const payload = {
+                      name: String(fd.get("name") || "").trim(),
+                      company: String(fd.get("company") || "").trim(),
+                      email: String(fd.get("email") || "").trim(),
+                      phone: String(fd.get("phone") || "").trim(),
+                      service: String(fd.get("service") || "").trim(),
+                      message: String(fd.get("message") || "").trim(),
+                    };
+                    try {
+                      const { data, error } = await supabase.functions.invoke(
+                        "send-contact-enquiry",
+                        { body: payload },
+                      );
+                      if (error) throw error;
+                      if (!data?.success) throw new Error(data?.error || "Failed");
+                      setSubmitted(true);
+                    } catch (err) {
+                      const msg = err instanceof Error ? err.message : "Something went wrong";
+                      toast.error("Could not send enquiry", { description: msg });
+                    } finally {
+                      setSubmitting(false);
+                    }
                   }}
                   className="space-y-6"
                 >
@@ -146,8 +173,16 @@ function ContactPage() {
                     />
                   </div>
 
-                  <button type="submit" className="btn-primary w-full justify-center">
-                    Send Enquiry <Send size={16} />
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="btn-primary w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    {submitting ? (
+                      <>Sending… <Loader2 size={16} className="animate-spin" /></>
+                    ) : (
+                      <>Send Enquiry <Send size={16} /></>
+                    )}
                   </button>
                 </form>
               )}
