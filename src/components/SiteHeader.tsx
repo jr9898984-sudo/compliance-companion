@@ -33,6 +33,7 @@ export function SiteHeader() {
             <Link
               key={item.to}
               to={item.to}
+              preload="intent"
               className="nav-link"
               data-active={pathname === item.to}
             >
@@ -41,7 +42,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <Link to="/contact" className="hidden lg:inline-flex btn-primary !py-3 !px-5 !text-xs">
+        <Link to="/contact" preload="intent" className="hidden lg:inline-flex btn-primary !py-3 !px-5 !text-xs">
           Get a Consultation
         </Link>
 
@@ -61,6 +62,7 @@ export function SiteHeader() {
               <Link
                 key={item.to}
                 to={item.to}
+                preload="intent"
                 onClick={() => setOpen(false)}
                 className="nav-link text-base"
                 data-active={pathname === item.to}
@@ -68,7 +70,7 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <Link to="/contact" onClick={() => setOpen(false)} className="btn-primary justify-center mt-2">
+            <Link to="/contact" preload="intent" onClick={() => setOpen(false)} className="btn-primary justify-center mt-2">
               Get a Consultation
             </Link>
           </nav>
