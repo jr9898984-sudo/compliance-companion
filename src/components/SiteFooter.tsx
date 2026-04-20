@@ -1,21 +1,21 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin } from "lucide-react";
+import logo from "@/assets/logo.jpeg";
 
 export function SiteFooter() {
   return (
     <footer className="bg-navy-deep text-cream mt-24">
       <div className="container-edge py-16 grid md:grid-cols-4 gap-10">
         <div className="md:col-span-2">
-          <div className="flex items-center gap-3 mb-5">
-            <div className="w-10 h-10 border border-gold flex items-center justify-center">
-              <span className="font-display text-gold text-xl font-bold">V</span>
-            </div>
-            <div>
-              <div className="font-display text-lg font-semibold">Vencore Nexus</div>
-              <div className="text-[10px] uppercase tracking-[0.2em] text-cream/60">
-                HR &amp; Legal Solutions
-              </div>
-            </div>
+          <div className="inline-block bg-cream p-4 mb-6 rounded-sm">
+            <img
+              src={logo}
+              alt="Vencore Nexus HR & Legal Solutions"
+              width={220}
+              height={80}
+              loading="lazy"
+              className="h-16 w-auto object-contain"
+            />
           </div>
           <p className="text-sm text-cream/70 leading-relaxed max-w-md">
             India&rsquo;s trusted partner for statutory compliance, payroll management

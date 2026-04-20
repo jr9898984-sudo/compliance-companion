@@ -1,6 +1,7 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.jpeg";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -17,18 +18,14 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 bg-background/85 backdrop-blur-md border-b border-border">
       <div className="container-edge flex items-center justify-between h-20">
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 bg-navy-deep flex items-center justify-center">
-            <span className="font-display text-gold text-xl font-bold">V</span>
-          </div>
-          <div className="leading-tight">
-            <div className="font-display text-base font-semibold text-navy-deep tracking-tight">
-              Vencore Nexus
-            </div>
-            <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-              HR &amp; Legal Solutions
-            </div>
-          </div>
+        <Link to="/" className="flex items-center group" aria-label="Vencore Nexus — Home">
+          <img
+            src={logo}
+            alt="Vencore Nexus HR & Legal Solutions"
+            width={220}
+            height={64}
+            className="h-14 md:h-16 w-auto object-contain"
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-10">
