@@ -5,7 +5,7 @@
 // 3. Dispatches two emails via Resend (admin notification + auto-reply)
 // 4. Updates row with status (sent/failed) + attempt counter for retry safety
 
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
+import { createClient } from "npm:@supabase/supabase-js@2.45.0";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
