@@ -292,8 +292,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* TEAM */}
-      <TeamSection />
+      {/* (Team section removed per requirement) */}
 
       {/* TESTIMONIAL */}
       <section className="py-24 md:py-32 bg-navy-deep text-cream">
