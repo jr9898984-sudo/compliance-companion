@@ -10,7 +10,6 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { ClientMarquee } from "@/components/ClientMarquee";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
 import { ServicesShowcase } from "@/components/ServicesShowcase";
-import { TeamSection } from "@/components/TeamSection";
 import { ScrollingBanner } from "@/components/ScrollingBanner";
 
 export const Route = createFileRoute("/")({
@@ -110,7 +109,7 @@ function HomePage() {
           <div className="max-w-3xl">
             <div className="eyebrow mb-5 reveal text-gold">
               <span className="gold-rule" />
-              Bengaluru · Pan-India · Since 2010
+              Bengaluru · Pan-India · Since 2025
             </div>
             <h1 className="reveal reveal-delay-1 font-display text-cream text-4xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] tracking-tight">
               Compliance is not a checkbox.
@@ -293,8 +292,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* TEAM */}
-      <TeamSection />
+      {/* (Team section removed per requirement) */}
 
       {/* TESTIMONIAL */}
       <section className="py-24 md:py-32 bg-navy-deep text-cream">
