@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowDown, CheckCircle2, Quote, ShieldCheck, FileSpreadsheet, Scale } from "lucide-react";
+import { ArrowRight, ArrowDown, CheckCircle2, Quote, ShieldCheck, FileSpreadsheet, Scale, PlayCircle } from "lucide-react";
 import heroImage from "@/assets/hero.jpg";
+import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import teamMeeting from "@/assets/team-meeting.jpg";
 import signing from "@/assets/signing.jpg";
 import consultation from "@/assets/consultation.jpg";
@@ -88,52 +89,56 @@ const stats = [
 function HomePage() {
   return (
     <>
-      {/* HERO — animated banner */}
-      <section className="relative bg-navy-deep overflow-hidden min-h-[92vh] flex items-center">
+      {/* HERO — compact cinematic video banner */}
+      <section className="relative bg-navy-deep overflow-hidden h-[68vh] min-h-[520px] max-h-[760px] flex items-center">
         <div className="absolute inset-0">
-          <img
-            src={heroImage}
-            alt=""
-            width={1920}
-            height={1080}
-            className="w-full h-full object-cover opacity-45 ken-burns"
+          <video
+            src={heroVideo.url}
+            poster={heroImage}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className="w-full h-full object-cover opacity-55"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-navy-deep/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/80 to-navy-deep/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-navy-deep/40" />
         </div>
 
-        <div className="relative container-edge py-28 md:py-36 w-full">
+        <div className="relative container-edge py-16 md:py-20 w-full">
           <div className="max-w-3xl">
-            <div className="eyebrow mb-6 reveal">
+            <div className="eyebrow mb-5 reveal text-gold">
               <span className="gold-rule" />
               Bengaluru · Pan-India · Since 2010
             </div>
-            <h1 className="reveal reveal-delay-1 font-display text-cream text-5xl md:text-7xl lg:text-[5.25rem] font-semibold leading-[1.02] tracking-tight">
+            <h1 className="reveal reveal-delay-1 font-display text-cream text-4xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] tracking-tight">
               Compliance is not a checkbox.
-              <span className="block text-gold italic font-normal mt-3">
+              <span className="block text-gold italic font-normal mt-2">
                 It&rsquo;s a discipline.
               </span>
             </h1>
-            <p className="reveal reveal-delay-2 mt-8 text-lg md:text-xl text-cream/75 max-w-xl leading-relaxed">
-              Vencore Nexus delivers statutory compliance, payroll management
-              and HR legal advisory built on regulatory rigour — protecting
-              India&rsquo;s most demanding enterprises.
+            <p className="reveal reveal-delay-2 mt-6 text-base md:text-lg text-cream/80 max-w-xl leading-relaxed">
+              Statutory compliance, payroll management and HR legal advisory —
+              built on regulatory rigour for India&rsquo;s most demanding
+              enterprises.
             </p>
-            <div className="reveal reveal-delay-3 mt-10 flex flex-wrap gap-4">
+            <div className="reveal reveal-delay-3 mt-8 flex flex-wrap gap-4 items-center">
               <Link
                 to="/contact"
+                preload="intent"
                 className="btn-primary !bg-gold !border-gold !text-navy-deep hover:!bg-cream hover:!border-cream"
               >
                 Request Consultation <ArrowRight size={16} />
               </Link>
-              <Link to="/services" className="btn-outline">
-                Explore Services
+              <Link to="/services" preload="intent" className="btn-outline">
+                <PlayCircle size={16} /> Explore Services
               </Link>
             </div>
 
-            <div className="reveal reveal-delay-4 mt-16 flex items-center gap-6 text-cream/60 text-xs uppercase tracking-[0.2em]">
+            <div className="reveal reveal-delay-4 mt-10 flex items-center gap-4 text-cream/60 text-xs uppercase tracking-[0.2em]">
               <div className="scroll-hint">
-                <ArrowDown size={18} className="text-gold" />
+                <ArrowDown size={16} className="text-gold" />
               </div>
               Scroll to explore
             </div>
