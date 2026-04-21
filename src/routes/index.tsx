@@ -190,44 +190,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ANIMATED STATS BAND with bg image */}
-      <section className="relative bg-navy-deep text-cream py-24 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img
-            src={teamMeeting}
-            alt=""
-            width={1920}
-            height={1080}
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy-deep via-navy-deep/80 to-navy-deep" />
-        </div>
-        <div className="relative container-edge">
-          <div className="text-center mb-16">
-            <div className="eyebrow inline-flex items-center mb-4 text-gold">
-              <span className="gold-rule" />
-              The Numbers
-            </div>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold text-cream max-w-2xl mx-auto leading-tight">
-              Built on a track record that speaks quietly but unmistakably.
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
-            {stats.map((s) => (
-              <div key={s.label} className="text-center border-l border-cream/20 first:border-l-0 px-2 md:px-6">
-                <div className="font-display text-5xl md:text-7xl text-gold font-semibold leading-none">
-                  <AnimatedNumber value={s.value} suffix={s.suffix} />
-                </div>
-                <div className="mt-4 text-xs uppercase tracking-[0.18em] text-cream/70">
-                  {s.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* DETAILED SERVICES SHOWCASE with imagery */}
       <ServicesShowcase services={services} />
 
