@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowDown, CheckCircle2, Quote, ShieldCheck, FileSpreadsheet, Scale, PlayCircle } from "lucide-react";
 import heroImage from "@/assets/hero.jpg";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
-import teamMeeting from "@/assets/team-meeting.jpg";
+
 import signing from "@/assets/signing.jpg";
 import consultation from "@/assets/consultation.jpg";
 import payrollImg from "@/assets/team-meeting.jpg";
