@@ -8,7 +8,6 @@ import consultation from "@/assets/consultation.jpg";
 import payrollImg from "@/assets/team-meeting.jpg";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ClientMarquee } from "@/components/ClientMarquee";
-import { AnimatedNumber } from "@/components/AnimatedNumber";
 import { ServicesShowcase } from "@/components/ServicesShowcase";
 import { ScrollingBanner } from "@/components/ScrollingBanner";
 
@@ -78,12 +77,6 @@ const services = [
   },
 ];
 
-const stats = [
-  { value: 200, suffix: "+", label: "Clients Served" },
-  { value: 15, suffix: "+", label: "Years of Expertise" },
-  { value: 100, suffix: "%", label: "Compliance Accuracy" },
-  { value: 28, suffix: "", label: "States Covered" },
-];
 
 function HomePage() {
   return (
