@@ -1,14 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ShieldCheck, FileSpreadsheet, Scale, ArrowRight } from "lucide-react";
-import { SectionHeading } from "@/components/SectionHeading";
+import { ShieldCheck, FileSpreadsheet, Scale, ArrowRight, Building2, ClipboardCheck, Factory, Wallet } from "lucide-react";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Statutory Compliance, Payroll & HR Legal Advisory | Vencore Nexus" },
-      { name: "description", content: "Comprehensive HR compliance services including PF, ESI, gratuity, payroll processing, and HR legal advisory across India." },
+      { title: "Services — Statutory, Vendor, Factory & Payroll Compliance | Vencore Nexus" },
+      { name: "description", content: "Statutory, vendor, factory & payroll compliance, compliance risk audits, payroll processing and HR legal advisory across India." },
       { property: "og:title", content: "Services — Vencore Nexus" },
-      { property: "og:description", content: "Statutory compliance, payroll management & HR legal advisory tailored to Indian enterprises." },
+      { property: "og:description", content: "Statutory, vendor, factory & payroll compliance, audits and HR legal advisory tailored to Indian enterprises." },
     ],
   }),
   component: ServicesPage,
@@ -33,9 +32,77 @@ const services = [
     ],
   },
   {
+    icon: Building2,
+    title: "Vendor Compliance Services",
+    intro: "Insulate your principal-employer liability with rigorous vendor and contractor compliance monitoring across every site and engagement.",
+    items: [
+      "Vendor onboarding & due diligence",
+      "Monthly statutory documentation review",
+      "PF, ESI, PT contribution verification",
+      "Wage register & attendance audits",
+      "Bonus, leave & gratuity reconciliation",
+      "Contract Labour Act licence tracking",
+      "Periodic on-site compliance audits",
+      "Vendor scorecards & risk dashboards",
+      "Non-compliance escalation & closure",
+      "Principal-employer indemnity reporting",
+    ],
+  },
+  {
+    icon: ClipboardCheck,
+    title: "Compliance Risk Audit",
+    intro: "Independent, audit-grade assessment of your end-to-end labour and statutory posture — with prioritised remediation roadmaps.",
+    items: [
+      "Central & state labour law gap analysis",
+      "Documentation and register inspection",
+      "Statutory remittance reconciliation",
+      "Wage structure & minimum wages testing",
+      "POSH, contract labour & factory checks",
+      "Risk heatmap with severity scoring",
+      "Root-cause analysis & remediation plan",
+      "Management & board-level reporting",
+      "Pre-inspection readiness audits",
+      "Post-acquisition / due-diligence audits",
+    ],
+  },
+  {
+    icon: Wallet,
+    title: "Payroll Compliance Services",
+    intro: "The compliance layer that sits over your payroll — ensuring every deduction, filing and disclosure is legally airtight.",
+    items: [
+      "TDS computation, deposit & quarterly returns",
+      "PF / ESI / PT challan generation & filing",
+      "Form 16, Form 24Q, Form 12BA issuance",
+      "Labour Welfare Fund remittances",
+      "Bonus & gratuity statutory provisioning",
+      "Income tax declarations & investment proofs",
+      "Statutory leave & overtime tracking",
+      "Year-end reconciliation & audit support",
+      "Payroll-related notice handling",
+      "Compliance calendar & alerting",
+    ],
+  },
+  {
+    icon: Factory,
+    title: "Factory Compliance Services",
+    intro: "Specialist compliance for manufacturing units under the Factories Act and allied state rules — keeping operations safe, licensed and inspection-ready.",
+    items: [
+      "Factory licence registration & renewal",
+      "Plan approval & site layout compliance",
+      "Form-wise statutory register maintenance",
+      "Working hours, shifts & overtime records",
+      "Health, safety & welfare compliance",
+      "Hazardous process & chemical disclosures",
+      "Annual & half-yearly returns filing",
+      "Inspector liaison & visit management",
+      "Accident reporting & investigation support",
+      "Pollution control board coordination",
+    ],
+  },
+  {
     icon: FileSpreadsheet,
-    title: "Payroll Management",
-    intro: "Precision payroll for organisations of every size — from 20-person startups to 5,000-person enterprises.",
+    title: "Payroll Services",
+    intro: "Precision payroll for organisations of every size — from 20-person startups to 5,000-person enterprises across multiple entities.",
     items: [
       "Monthly salary processing across multiple entities",
       "Statutory deductions (TDS, PF, ESI, PT)",

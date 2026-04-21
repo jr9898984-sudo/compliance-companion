@@ -2,13 +2,12 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowDown, CheckCircle2, Quote, ShieldCheck, FileSpreadsheet, Scale, PlayCircle } from "lucide-react";
 import heroImage from "@/assets/hero.jpg";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
-import teamMeeting from "@/assets/team-meeting.jpg";
+
 import signing from "@/assets/signing.jpg";
 import consultation from "@/assets/consultation.jpg";
 import payrollImg from "@/assets/team-meeting.jpg";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ClientMarquee } from "@/components/ClientMarquee";
-import { AnimatedNumber } from "@/components/AnimatedNumber";
 import { ServicesShowcase } from "@/components/ServicesShowcase";
 import { ScrollingBanner } from "@/components/ScrollingBanner";
 
@@ -78,12 +77,6 @@ const services = [
   },
 ];
 
-const stats = [
-  { value: 200, suffix: "+", label: "Clients Served" },
-  { value: 15, suffix: "+", label: "Years of Expertise" },
-  { value: 100, suffix: "%", label: "Compliance Accuracy" },
-  { value: 28, suffix: "", label: "States Covered" },
-];
 
 function HomePage() {
   return (
@@ -184,44 +177,6 @@ function HomePage() {
                 </div>
                 <h3 className="font-display text-2xl text-navy-deep font-semibold mb-3">{t}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ANIMATED STATS BAND with bg image */}
-      <section className="relative bg-navy-deep text-cream py-24 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img
-            src={teamMeeting}
-            alt=""
-            width={1920}
-            height={1080}
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy-deep via-navy-deep/80 to-navy-deep" />
-        </div>
-        <div className="relative container-edge">
-          <div className="text-center mb-16">
-            <div className="eyebrow inline-flex items-center mb-4 text-gold">
-              <span className="gold-rule" />
-              The Numbers
-            </div>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold text-cream max-w-2xl mx-auto leading-tight">
-              Built on a track record that speaks quietly but unmistakably.
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
-            {stats.map((s) => (
-              <div key={s.label} className="text-center border-l border-cream/20 first:border-l-0 px-2 md:px-6">
-                <div className="font-display text-5xl md:text-7xl text-gold font-semibold leading-none">
-                  <AnimatedNumber value={s.value} suffix={s.suffix} />
-                </div>
-                <div className="mt-4 text-xs uppercase tracking-[0.18em] text-cream/70">
-                  {s.label}
-                </div>
               </div>
             ))}
           </div>
